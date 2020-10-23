@@ -1,22 +1,31 @@
 ---
-# tasks file for bastion
 
-- name: "Set bastion hostname"
+- name: "Set hostname to {{ bastion_hostname }}"
   hostname:
-    name: "bastion"
+    name: "{{ bastion_hostname }}"
+  tags:
+    - notest
 
-- name: "Check dhcpcd service is started and enabled"
+- name: Check dhcpcd service is started and enabled
   service:
-    name: "dhcpcd"
+    name: dhcpcd
     state: started
     enabled: true
+  tags:
+    - notest
 
-- name: "Set IP-address of bastion host"
+- name: "Set static IP for {{ dhcpcd_interface }}"
   template:
-    src: "dhcpcd.conf.j2"
+    src: dhcpcd.conf.j2
     dest: "{{ dhcpcd_conf_location }}"
-  notify: restart_pi
+    mode: "0644"
+  notify: reboot system
+  tags:
+    - notest
 
-- name: "Force handler to be executed"
+- name: Force handler to be executed
   meta: flush_handlers
+  tags:
+    - notest
 
+...

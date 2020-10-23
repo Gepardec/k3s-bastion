@@ -1,3 +1,5 @@
 ---
-# vars file for bastion
-ip_address: ""
+
+dhcpcd_conf_location: "/etc/dhcpcd.conf"
+
+...

@@ -1,5 +1,4 @@
 ---
-# This is an example playbook to execute Ansible tests.
 
 - name: Verify
   hosts: all
@@ -7,3 +6,9 @@
   - name: Example assertion
     assert:
       that: true
+
+# don't verify the hostname (limitation in docker)
+# verify that dhcpcd is running
+# verify dhcpcd.conf contains correct values
+
+...

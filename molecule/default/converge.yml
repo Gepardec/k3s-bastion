@@ -1,7 +1,11 @@
 ---
+
 - name: Converge
   hosts: all
+  gather_facts: yes
   tasks:
-    - name: "Include bastion"
+    - name: Include bastion
       include_role:
-        name: "ansible-role-bastion"
+        name: ansible-role-k3s-bastion
+
+...
