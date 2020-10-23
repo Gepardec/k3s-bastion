@@ -1,6 +1,6 @@
 version: "~> 1.0"
 os: linux
-dist: buster
+dist: xenial
 language: python
 python:
 - '3.6'
