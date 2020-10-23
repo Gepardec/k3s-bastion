@@ -4,4 +4,4 @@
   tasks:
     - name: "Include bastion"
       include_role:
-        name: "bastion"
+        name: "ansible-role-bastion"
