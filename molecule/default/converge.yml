@@ -6,6 +6,6 @@
   tasks:
     - name: Include bastion
       include_role:
-        name: ansible-role-k3s-bastion
+        name: k3s-bastion
 
 ...
