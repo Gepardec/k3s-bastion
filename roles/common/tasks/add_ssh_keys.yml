@@ -1,0 +1,16 @@
+
+- name: "SSH Generation"
+  shell: >
+    ssh-keygen -q -b 2048 -t rsa -N "" -C "creating SSH" -f ~/.ssh/{{ item }}_id_rsa
+    creates="~/.ssh/{{ item }}_id_rsa
+  with_items: "{{ users }}"
+  tags: create keys
+
+- name: "SSH public key for '{{ item }}'"
+  authorized_key:
+    user: "{{ item }}"
+    state: "present"
+    key: "{{ lookup('file', '~/.ssh/{{ items }}_id_rsa.pub') }}"
+  with_items: "{{ users }}"
+  tags: all keys
+
