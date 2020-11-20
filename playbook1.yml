@@ -1,8 +1,0 @@
-- hosts: bastion
-  become: yes
-  vars_files:
-    - group_vars/all/users.yml   
-  roles:
-    -  common
-  tags: 
-    bastion
