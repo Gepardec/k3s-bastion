@@ -1,0 +1,6 @@
+- name: "SSH public key for root access of '{{ user }}' with state '{{ state }}'"
+  authorized_key:
+    user: "tech"
+    state: "present"
+    key: "{{ lookup('file', '~/.ssh/id_rsa.pub') }}"
+  tags: tech user, key tech

@@ -1,0 +1,13 @@
+- name: Addind coders group
+  group:
+    name: coders
+    state: present
+Create user accounts and add users to groups"
+  user:
+    name: "{{ item }}"
+    create_home: yes
+    password: "changeme"
+    update_password: on_create
+    groups: "www-data, coders"
+  with_items: "{{ users }}"
+  tags: installation, setup, users
