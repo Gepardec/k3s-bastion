@@ -1,0 +1,25 @@
+- name: generate SSH key
+  hosts: 127.0.0.1
+  connection: local
+
+  vars:
+    ssh_key_filename: "{{ item }}.id_rsa"
+  tasks:
+    - name: "generate SSH key {{ssh_key_filename}}"
+      openssh_keypair:
+        path: "~/.ssh/{{ item }}.id_rsa"
+        type: rsa
+        size: 4096
+        state: present
+        force: no
+      loop:
+        - amayer
+        - tech
+        - ckaserer
+        - drasztovich
+        - fhochleitner
+        - jriegler
+        - pholzer
+        - pwurm
+        - therzog
+  tags: local
