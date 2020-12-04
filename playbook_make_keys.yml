@@ -13,6 +13,7 @@
         state: present
         force: no
       loop:
+        - pi
         - amayer
         - tech
         - ckaserer
