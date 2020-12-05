@@ -1,0 +1,16 @@
+# roles/pi_setup/tasks/static_ip.yml
+---
+
+- name: Configure static IP in  /etc/dhcpcd.conf
+  become: yes
+  lineinfile:
+    dest:  /etc/dhcpcd.conf
+    regexp: "{{ item.regexp }}"
+    line: "{{ item.line }}"
+    state: present
+  with_items:
+    - { regexp: "^interface wlan[0-9]$", line: "interface wlan0" }
+    - { regexp: "^static ip_address", line: "static ip_address=192.168.0.51" }
+    - { regexp: "^static routers", line: "static routers=192.168.1.51" }
+    - { regexp: "^static domain_name_servers", line: "static domain_name_servers=8.8.8.8" }
+  notify: reboot_ssh
