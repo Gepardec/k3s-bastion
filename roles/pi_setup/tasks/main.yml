@@ -2,3 +2,4 @@
 - include: pi_setup_workflow.yml
 - include: config_local_time.yml
 - include: expand_filesystem.yml
+- include: static_ip.yml
