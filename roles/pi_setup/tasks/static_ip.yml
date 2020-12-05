@@ -14,3 +14,4 @@
     - { regexp: "^static routers", line: "static routers=192.168.1.51" }
     - { regexp: "^static domain_name_servers", line: "static domain_name_servers=8.8.8.8" }
   notify: reboot_ssh
+  tags: static_ip
