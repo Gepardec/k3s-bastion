@@ -1,9 +1,10 @@
-- name: set timezone to Europe/Vienna
+
+- name: "set timezone to Europe/Vienna"
   timezone:
     name: "Europe/Vienna"
   when: system_timezone is defined
 
-- name: ensure locale Europe/Vienna exists
+- name: "ensure locale Europe/Vienna exists"
   locale_gen:
     name: "Europe/Vienna"
     state: present
@@ -11,7 +12,7 @@
   notify:
     - update-locale
 
-- name: set default system locale
+- name: "set default system locale"
   debconf:
     name: 'locales'
     question: 'locales/default_environment_locale'
