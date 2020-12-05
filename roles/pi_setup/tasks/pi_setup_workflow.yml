@@ -1,0 +1,31 @@
+- name: "Update Apt Cache"
+  apt:
+    update_cache: yes
+    upgrade: dist
+  tags: update_apt
+
+- name: "Install Common packages"
+  apt:
+    name: ['vim', 'nano', 'htop', 'git', 'screen', 'net-tools']
+    state: latest
+  tags: install_applications
+
+- name: "updating hostname bastion-host (1/2)"
+  hostname:
+    name: "bastion-host"
+  register: hostname_chang
+
+- name: "updating hostname bastion-host (2/2)"
+  copy:
+    content: "bastion-host{{'\n'}}"
+    dest: /etc/hostname
+    backup: true
+  register: hostname_chang
+
+- name: "update /etc/hosts"
+  lineinfile:
+    dest: /etc/hosts
+    regexp: '^127\.0\.0\.1'
+    line: "127.0.0.1{{'\t'}}bastion-host"
+    backup: true
+    state: present

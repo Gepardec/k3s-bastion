@@ -1,0 +1,6 @@
+- hosts: pi
+  become: yes
+  roles:
+    -  pi_setup
+  tags:
+    pi_setup
