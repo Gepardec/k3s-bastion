@@ -1,7 +1,21 @@
 Role Name
 =========
 
-A brief description of the role goes here.
+playbook_make_keys.yml creates locally ssh key pairs for every user. Will be changed to a task in the future.
+
+roles/pi_setup
+ -> Update apt cache
+ -> Install common packages (vim, nano, htop, git, screen & net-tools)
+ -> Updating hostname
+ -> Set correct timezone
+ -> Expand filesystem
+ -> Setup a static ip
+ 
+ roles/common
+ -> create users
+ -> change pi password
+ -> add ssh keys for users
+ -> disable password authentication 
 
 Requirements
 ------------
@@ -17,6 +31,7 @@ Dependencies
 ------------
 
 A list of other roles hosted on Galaxy should go here, plus any details in regards to parameters that may need to be set for other roles, or variables that are used from other roles.
+
 
 Example Playbook
 ----------------
