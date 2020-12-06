@@ -1,4 +1,5 @@
 - name: "Create user accounts and add users to groups"
+  become: yes
   user:
     name: "{{ item }}"
     create_home: yes
