@@ -6,4 +6,4 @@
     update_password: always
     groups: "www-data, {{ item }}, adm, dialout, cdrom, sudo, audio, video, plugdev, games, users, input, netdev, gpio, i2c, spi"
   with_items: "{{ users }}"
-  tags: create_user
+  tags: create_users
