@@ -4,6 +4,6 @@
     create_home: yes
     password: "{{ 'changeme' | password_hash('sha512') }}" 
     update_password: always
-    groups: "www-data, {{ item }}, adm, dialout, cdrom, sudo, audio, video, plugdev, games, users, input, netdev, gpio, i2c, spi"
+    groups: "www-data, {{ item }}"
   with_items: "{{ users }}"
   tags: create_users
