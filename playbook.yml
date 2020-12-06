@@ -1,4 +1,4 @@
-- hosts: pi
+- hosts: bastion
   become: yes
   vars_files:
     - group_vars/all/users.yml
