@@ -1,4 +1,4 @@
-- name: Change user password
+- name: Change pi user password
   user:
     name: pi
     update_password: always
