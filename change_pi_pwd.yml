@@ -1,4 +1,4 @@
-- hosts: bastion
+- hosts: pwd-change
   become: yes
   roles:
     -  change_pi_pwd
