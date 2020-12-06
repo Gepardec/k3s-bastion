@@ -2,7 +2,6 @@
   become: yes
   vars_files:
     - group_vars/all/users.yml
-    - group_vars/all/all_users.yml
   roles:
     -  authenitication
   tags: 
