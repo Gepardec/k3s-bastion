@@ -1,6 +1,6 @@
 ---
 # tasks file for roles/common
-- - include: change_pi_pwd.yml
+- include: change_pi_pwd.yml
 - include: create_users.yml
 - include: add_ssh_keys.yml
 - include: disable_password_auth.yml
