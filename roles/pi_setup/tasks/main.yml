@@ -3,4 +3,3 @@
 - include: config_local_time.yml
 - include: expand_filesystem.yml
 - include: static_ip.yml
-- include: change_pi_pwd.yml
