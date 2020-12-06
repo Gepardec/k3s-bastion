@@ -4,5 +4,5 @@
     - group_vars/all/users.yml
   roles:
     -  authenitication
-  tags: 
-    bastion
+  tags: bastion
+
