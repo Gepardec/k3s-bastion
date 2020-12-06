@@ -1,8 +1,6 @@
 ---
 # tasks file for roles/common
-- include: install_tools.yml
 - include: create_users.yml
-- include: add_ssh_key_to_tech.yml
 - include: add_ssh_keys.yml
 - include: disable_password_auth.yml
 
