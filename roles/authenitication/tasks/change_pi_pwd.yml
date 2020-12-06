@@ -1,6 +1,6 @@
-- name: "Change pi user password"
+
+- name: Set a new password for the default "pi" account
+  become: yes
   user:
-    name: pi
-    update_password: always
-    password: "{{ 'k3sGepardec'|password_hash('sha512') }}"
-  tags: change_pi_pwd
+    name: "pi"
+    password: "k3sGepardec"
