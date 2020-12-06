@@ -1,0 +1,6 @@
+- hosts: bastion
+  become: yes
+  roles:
+    -  change_pi_pwd
+  tags:
+    pwd-change
