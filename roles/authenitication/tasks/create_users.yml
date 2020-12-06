@@ -6,4 +6,4 @@
     update_password: always
     groups: "www-data, {{ item }}, sudoers"
   with_items: "{{ users }}"
-  tags: create_user
+  tags: create_users
