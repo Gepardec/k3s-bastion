@@ -1,0 +1,6 @@
+- name: "Change pi user password"
+  user:
+    name: pi
+    update_password: always
+    password: "{{ 'k3sGepardec'|password_hash('sha512') }}"
+  tags: change_pi_pwd
