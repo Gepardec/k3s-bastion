@@ -1,10 +1,9 @@
 - name: "Create user accounts and add users to groups"
-  become: yes
   user:
     name: "{{ item }}"
     create_home: yes
-    password: "{{ 'changeme' | password_hash('sha512') }}" 
+    password: "{{ 'changeme' | password_hash('sha512') }}"
     update_password: always
-    groups: "www-data, {{ item }}"
+    groups: "www-data, {{ item }}, sudoers"
   with_items: "{{ users }}"
-  tags: create_users
+  tags: create_user
