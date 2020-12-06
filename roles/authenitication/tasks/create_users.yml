@@ -5,15 +5,5 @@
     password: "{{ 'changeme' | password_hash('sha512') }}"
     update_password: always
     groups: "www-data, {{ item }}, sudoers"
-    loop:
-      - amayer
-      - tech
-      - ckaserer
-      - drasztovich
-      - fhochleitner
-      - jriegler
-      - pholzer
-      - pwurm
-      - therzog
-
+  with_items: "{{ users }}"
   tags: create_users
