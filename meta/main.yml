@@ -1,7 +1,7 @@
 ---
 
 galaxy_info:
-  author: ckaserer
+  author: amayer
   description: bastion host for our k3s learning friday project
   company: Gepardec IT Services GmbH
   role_name: k3s_bastion
