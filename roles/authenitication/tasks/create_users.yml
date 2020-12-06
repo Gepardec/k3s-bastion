@@ -6,7 +6,6 @@
     update_password: always
     groups: "www-data, {{ item }}, sudoers"
     loop:
-      - pi
       - amayer
       - tech
       - ckaserer
