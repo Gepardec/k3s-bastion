@@ -1,5 +1,0 @@
----
-# tasks file for roles/common
-- include: create_users.yml
-
-
