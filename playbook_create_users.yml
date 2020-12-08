@@ -3,5 +3,5 @@
   vars_files:
     - group_vars/all/users.yml
   roles:
-    -  authentication
+    -  users
   tags: users
