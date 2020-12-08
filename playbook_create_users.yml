@@ -1,7 +1,7 @@
-- hosts: bastion
+- hosts: bastion-host
   become: yes
   vars_files:
     - group_vars/all/users.yml
   roles:
     -  authentication
-  tags: bastion
+  tags: users
