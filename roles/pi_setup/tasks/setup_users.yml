@@ -5,6 +5,15 @@
     create_home: yes
     password: "{{ 'changeme' | password_hash('sha512') }}"
     update_password: always
+    groups: "www-data"
+  with_items: "{{ users }}"
+  tags: create_users
+
+- name: "Create user accounts and add users to groups"
+  become: yes
+  user:
+    name: "{{ item }}"
+    create_home: yes
     groups: "www-data, {{ item }}"
   with_items: "{{ users }}"
   tags: create_users
