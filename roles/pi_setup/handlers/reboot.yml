@@ -1,4 +1,4 @@
-- name: reboot_ssh
+- name: reboot
   command: shutdown -r +0 'Ansible Reboot triggered'
     async: 0
     poll: 0
