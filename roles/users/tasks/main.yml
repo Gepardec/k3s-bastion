@@ -1,5 +1,4 @@
 ---
 # tasks file for roles/authentication
-- include: create_users.yml
-
+- include: add_ssh_keys.yml
 
