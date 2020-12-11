@@ -1,4 +1,5 @@
 ---
 # tasks file for roles/authentication
 - include: add_ssh_keys.yml
+- include: disable_password_auth.yml
 
